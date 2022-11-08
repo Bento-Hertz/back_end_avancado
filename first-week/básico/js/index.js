@@ -98,7 +98,7 @@ chars.pop()
 // push para inserir no fim do array; unshift para inserir no início do array 
 chars.push('B')
 console.log(chars)
- */
+ 
 
 
 // Desafio: desenvolva uma calculadora para as 4 operações básicas usando const com os dados vindo de um formulário.
@@ -188,6 +188,7 @@ const n = 100
 if(n > 10){ // > < >= <= == !=
     console.log('Teste de entrada no if.')
 }
+
 const texto = '0'
 if(texto === 0)
     console.log("Os dados são iguais.")
@@ -200,6 +201,7 @@ const resultado =  n > 20 ? true : false
 console.log(resultado)
 console.log(typeof resultado)
 // repetição: precisa de 3 partes - variável de controle e a inicialização dela; condição/critério de parada; alteração do valor da variável de controle
+
 let contador = 0
 const lista = [1, 7, 3, 64, 2, 0]
 while(contador < lista.length){
@@ -208,6 +210,72 @@ while(contador < lista.length){
 }
 const outraLista = ['a', 'b', 'd', 'e', 'c']
 for(let contador = 0; contador < outraLista.length; contador++)
-    console.log(`O elemento da
+    console.log(`O elemento da vez é ${outraLista[contador]}.`) //template literais, ou template strings
 
-    vez é ${outraLista[contador]}.`) //template literais, ou template strings
+
+const a = 5
+const b = 10
+const out = `Quinze é ${(a+b)} e não ${(b-a)}`
+console.log(out) 
+
+// métodos de arrays
+
+const names = ['Victor', 'Paulo', 'Daniel', 'Rodrigo']
+names.forEach(function(name){  //function é uma função anônima
+    console.log(name)
+})
+
+const modifiedNames = names.map(function(name){
+    if(name == 'Paulo')
+        return ('Paulo Sampaio')
+    else{
+        return name
+    }
+})
+
+modifiedNames.forEach(function(name){
+    console.log(name)
+})
+
+const numArray = [90,5,,6,22,10,36,1,4].filter(function(num){
+    return num < 10
+})
+
+numArray.forEach(function(num){
+    console.log(num)
+})
+console.log(numArray)   
+
+const sumArray = numArray.reduce(function(num1, num2){
+    return num1 + num2
+})
+console.log(sumArray) 
+
+// funções
+
+function myFunction(){ //declaração de uma função
+    return 'Testando a minha função'
+}
+console.log(myFunction()) //chamada da função dentro do método console.log()
+
+//
+
+const atribuiFuncao = myFunction() //atribui a função existente a uma variável
+console.log(atribuiFuncao) //chamada da variável que contém a função
+
+//
+
+const chamadaDaFuncao = function myFunction(){ //cria uma função e a atribui a uma variável
+    return 'Testando a minha função'
+}
+console.log(chamadaDaFuncao) //chamada da variável que contém a função anônima
+
+//função anônima
+*/
+const myArrowFunction = (a,b) => a+b // declara uma função anônima dentro de uma variável
+console.log(myArrowFunction(5,2)) //chamada da função anônima dentro do console.log() 
+
+// desafio
+
+const Arrow = () => ((x=7) => (x+5))
+console.log(Arrow())
