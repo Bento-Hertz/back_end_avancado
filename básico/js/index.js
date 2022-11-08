@@ -271,11 +271,17 @@ const chamadaDaFuncao = function myFunction(){ //cria uma função e a atribui a
 console.log(chamadaDaFuncao) //chamada da variável que contém a função anônima
 
 //função anônima
-*/
+
 const myArrowFunction = (a,b) => a+b // declara uma função anônima dentro de uma variável
-console.log(myArrowFunction(5,2)) //chamada da função anônima dentro do console.log() 
+console.log(myArrowFunction(5,2)) //chamada da função anônima dentro do console.log() */
 
 // desafio
 
-const Arrow = () => ((x=7) => (x+5))
-console.log(Arrow())
+function somar(x){
+    return 5+x
+}
+
+const Arrow = (x) => somar(x)
+console.log(Arrow(7))
+
+//const Arrow = (x) => (x) => x+5
