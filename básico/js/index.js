@@ -339,3 +339,9 @@ texts[0].textContent = 'Estou alterando o primeiro parágrafo.' //altera o eleme
 texts[0].innerHTML = '<span> Testando uma alteração...</span>'
 
 texts[1].style.backgroundColor = 'red' //altera a cor de fundo do elemento
+
+texts[2].remove() //exclui o elemento
+
+const button = document.querySelector('#btn')
+
+button.addEventListener('click',()=>(texts[3].style.backgroundColor='orange'))
