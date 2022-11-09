@@ -218,7 +218,7 @@ const b = 10
 const out = `Quinze é ${(a+b)} e não ${(b-a)}`
 console.log(out) 
 
-// métodos de arrays
+// métodos de arrays 
 
 const names = ['Victor', 'Paulo', 'Daniel', 'Rodrigo']
 names.forEach(function(name){  //function é uma função anônima
@@ -273,7 +273,7 @@ console.log(chamadaDaFuncao) //chamada da variável que contém a função anôn
 //função anônima
 
 const myArrowFunction = (a,b) => a+b // declara uma função anônima dentro de uma variável
-console.log(myArrowFunction(5,2)) //chamada da função anônima dentro do console.log() */
+console.log(myArrowFunction(5,2)) //chamada da função anônima dentro do console.log() 
 
 // desafio
 
@@ -282,6 +282,60 @@ function somar(x){
 }
 
 const Arrow = (x) => somar(x)
-console.log(Arrow(7))
+console.log(Arrow(7)) 
 
-//const Arrow = (x) => (x) => x+5
+const namesLength = names.map(function(value){
+    return value.length
+})
+console.log(namesLength)
+
+const arrowNames = names.map(value => value.length) */
+
+//orientação a objetos
+
+class Product{
+    constructor(name, price){
+        this.name = name
+        this.price = price
+    }
+    productDetails(){
+        return `O nome do produto é ${this.name} e o preço é ${this.price}.`
+    }
+    static test(){
+        console.log('testando método estático...')
+    }
+}
+
+//instanciando um objeto
+const shirt = new Product('Camisa branca', 19.99)
+console.log(shirt.productDetails())
+Product.test()
+
+class Tenis extends Product{
+    constructor(name, price, size){
+        super(name, price)
+        this.size = size
+    }
+    showInformation(){
+        return `O ${this.name} custa R$${this.price} e o seu tamanho é ${this.size}.`
+    }
+}
+
+const tenis = new Tenis('tenis preto', 200.00, 41)
+console.log(tenis.showInformation())
+
+console.log(document.getElementById('titulo'))  //resgata o elemento pelo ID
+console.log(document.getElementsByClassName('text')) //resgata uma lista de elementos pela classe
+
+let texts = document.querySelector('.text') //seleciona apenas o primeiro elemento
+texts = document.querySelectorAll('.text')//seleciona todos os elementos da classe CSS
+console.log(texts)
+
+texts.forEach((data) => console.log(data))
+
+texts[0].textContent //Indica o conteúdo especificado da lista
+texts[0].textContent = 'Estou alterando o primeiro parágrafo.' //altera o elemento na visualização da página sem mudar o arquivo HTML
+
+texts[0].innerHTML = '<span> Testando uma alteração...</span>'
+
+texts[1].style.backgroundColor = 'red' //altera a cor de fundo do elemento
